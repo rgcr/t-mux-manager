@@ -1,0 +1,9 @@
+DRY-RUN: new-session -d -s minimal-commands -n editor -c $HOME/workspace
+DRY-RUN: set-option -t =minimal-commands:editor -w automatic-rename off
+DRY-RUN: send-keys -t =minimal-commands:editor.0 -l -- vim .
+DRY-RUN: send-keys -t =minimal-commands:editor.0 Enter
+DRY-RUN: new-window -t =minimal-commands: -n server -c $HOME/workspace
+DRY-RUN: set-option -t =minimal-commands:server -w automatic-rename off
+DRY-RUN: send-keys -t =minimal-commands:server.0 -l -- npm start
+DRY-RUN: send-keys -t =minimal-commands:server.0 Enter
+DRY-RUN: select-window -t =minimal-commands:editor

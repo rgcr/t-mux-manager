@@ -1,0 +1,23 @@
+DRY-RUN: new-session -d -s custom-layout -n editor -c $HOME/workspace
+DRY-RUN: set-option -t =custom-layout:editor -w automatic-rename off
+DRY-RUN: select-layout -t =custom-layout:editor c2e5,214x55,0,0,8
+DRY-RUN: new-window -t =custom-layout: -n services -c $HOME/workspace
+DRY-RUN: set-option -t =custom-layout:services -w automatic-rename off
+DRY-RUN: split-window -t =custom-layout:services -h -c $HOME/workspace
+DRY-RUN: send-keys -t =custom-layout:services.0 -l -- npm run dev:frontend
+DRY-RUN: send-keys -t =custom-layout:services.0 Enter
+DRY-RUN: send-keys -t =custom-layout:services.1 -l -- npm run dev:backend
+DRY-RUN: send-keys -t =custom-layout:services.1 Enter
+DRY-RUN: select-layout -t =custom-layout:services even-horizontal
+DRY-RUN: new-window -t =custom-layout: -n logs -c $HOME/workspace
+DRY-RUN: set-option -t =custom-layout:logs -w automatic-rename off
+DRY-RUN: split-window -t =custom-layout:logs -h -c $HOME/workspace
+DRY-RUN: split-window -t =custom-layout:logs -h -c $HOME/workspace
+DRY-RUN: send-keys -t =custom-layout:logs.0 -l -- tail -f app.log
+DRY-RUN: send-keys -t =custom-layout:logs.0 Enter
+DRY-RUN: send-keys -t =custom-layout:logs.1 -l -- tail -f error.log
+DRY-RUN: send-keys -t =custom-layout:logs.1 Enter
+DRY-RUN: send-keys -t =custom-layout:logs.2 -l -- tail -f worker.log
+DRY-RUN: send-keys -t =custom-layout:logs.2 Enter
+DRY-RUN: select-layout -t =custom-layout:logs 77c1,214x55,0,0{56x55,0,0,10,157x55,57,0[157x32,57,0,70,157x22,57,33,71]}
+DRY-RUN: select-window -t =custom-layout:editor

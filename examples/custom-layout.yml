@@ -1,0 +1,32 @@
+# Custom layout example
+#
+# The layout field accepts both named and raw layout strings.
+#
+# Named layouts:
+#   even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
+#
+# Raw layout strings:
+#   Grab from an existing window with:
+#     tmux list-windows -F '#{window_name} #{window_layout}'
+#
+#   Pane count in config must match the layout string.
+
+session: custom-layout
+root: ~/workspace
+
+windows:
+  - name: editor
+    layout: "c2e5,214x55,0,0,8"
+
+  - name: services
+    layout: even-horizontal
+    panes:
+      - commands: [npm run dev:frontend]
+      - commands: [npm run dev:backend]
+
+  - name: logs
+    layout: "77c1,214x55,0,0{56x55,0,0,10,157x55,57,0[157x32,57,0,70,157x22,57,33,71]}"
+    panes:
+      - commands: [tail -f app.log]
+      - commands: [tail -f error.log]
+      - commands: [tail -f worker.log]

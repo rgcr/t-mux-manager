@@ -1,0 +1,7 @@
+DRY-RUN: new-session -d -s minimal -n w1 -c $HOME/workspace
+DRY-RUN: set-option -t =minimal:w1 -w automatic-rename off
+DRY-RUN: new-window -t =minimal: -n w2 -c $HOME/workspace
+DRY-RUN: set-option -t =minimal:w2 -w automatic-rename off
+DRY-RUN: new-window -t =minimal: -n w3 -c $HOME/workspace
+DRY-RUN: set-option -t =minimal:w3 -w automatic-rename off
+DRY-RUN: select-window -t =minimal:w1

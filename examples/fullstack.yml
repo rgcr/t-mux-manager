@@ -1,0 +1,33 @@
+session: fullstack
+
+root: ~/projects/fullstack
+
+windows:
+  - name: editor
+    commands:
+      - vim .
+
+  - name: services
+    layout: even-horizontal
+    panes:
+      - commands:
+          - npm run dev:frontend
+        split: horizontal
+      - commands:
+          - npm run dev:backend
+        split: horizontal
+
+  - name: logs
+    root: ~/projects/fullstack/logs
+    layout: tiled
+    panes:
+      - commands:
+          - tail -f frontend.log
+        split: horizontal
+      - commands:
+          - tail -f backend.log
+        split: horizontal
+      - commands:
+          - tail -f worker.log
+        split: vertical
+        size: 30

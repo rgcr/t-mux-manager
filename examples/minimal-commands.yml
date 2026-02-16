@@ -1,0 +1,12 @@
+session: minimal-commands
+
+root: ~/workspace
+
+windows:
+  - name: editor
+    commands:
+      - vim .
+
+  - name: server
+    commands:
+      - npm start

@@ -1,0 +1,24 @@
+DRY-RUN: new-session -d -s fullstack -n editor -c $HOME/projects/fullstack
+DRY-RUN: set-option -t =fullstack:editor -w automatic-rename off
+DRY-RUN: send-keys -t =fullstack:editor.0 -l -- vim .
+DRY-RUN: send-keys -t =fullstack:editor.0 Enter
+DRY-RUN: new-window -t =fullstack: -n services -c $HOME/projects/fullstack
+DRY-RUN: set-option -t =fullstack:services -w automatic-rename off
+DRY-RUN: split-window -t =fullstack:services -h -c $HOME/projects/fullstack
+DRY-RUN: send-keys -t =fullstack:services.0 -l -- npm run dev:frontend
+DRY-RUN: send-keys -t =fullstack:services.0 Enter
+DRY-RUN: send-keys -t =fullstack:services.1 -l -- npm run dev:backend
+DRY-RUN: send-keys -t =fullstack:services.1 Enter
+DRY-RUN: select-layout -t =fullstack:services even-horizontal
+DRY-RUN: new-window -t =fullstack: -n logs -c $HOME/projects/fullstack/logs
+DRY-RUN: set-option -t =fullstack:logs -w automatic-rename off
+DRY-RUN: split-window -t =fullstack:logs -h -c $HOME/projects/fullstack/logs
+DRY-RUN: split-window -t =fullstack:logs -v -p 30 -c $HOME/projects/fullstack/logs
+DRY-RUN: send-keys -t =fullstack:logs.0 -l -- tail -f frontend.log
+DRY-RUN: send-keys -t =fullstack:logs.0 Enter
+DRY-RUN: send-keys -t =fullstack:logs.1 -l -- tail -f backend.log
+DRY-RUN: send-keys -t =fullstack:logs.1 Enter
+DRY-RUN: send-keys -t =fullstack:logs.2 -l -- tail -f worker.log
+DRY-RUN: send-keys -t =fullstack:logs.2 Enter
+DRY-RUN: select-layout -t =fullstack:logs tiled
+DRY-RUN: select-window -t =fullstack:editor

@@ -1,0 +1,7 @@
+session: minimal
+root: ~/workspace
+
+windows:
+  - name: w1
+  - name: w2
+  - name: w3
