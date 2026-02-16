@@ -6,9 +6,9 @@
 
 It creates sessions when they don’t exist and reuses them when they do — idempotent by default.
 
-It can start sessions from simple YAML project files.
+It can start sessions from simple `YAML` project files.
 
-And if you hate writing YAML, it can generate the file for you from an existing session.
+And if you hate writing `YAML`, it can generate the file for you from an existing session.
 
 
 ## Why?
@@ -30,14 +30,13 @@ So I built `t - mux manager`: a small standalone script that does exactly what I
 
 - Single command workflow
 - Minimal dependencies
-- Simple YAML structure
+- Simple `YAML` structure
 - Idempotent session and project handling
 - Plain tmux commands. No unnecessary complexity. Just `tmux`
 
 **And why just `t` as the command name?**
 
-Because I'm lazy, it's short, and easy to type when you're already in a terminal all day
-
+It's short, and easy to type when you're already in a terminal all day
 
 ## Requirements
 
