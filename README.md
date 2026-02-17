@@ -57,7 +57,11 @@ sudo pacman -S yq
 
 ## Install
 
-### Option 1 - Clone the and symlink
+### Option 1 - Install with `brew`
+
+`brew install rgcr/formulae/t-mux-manager`
+<br><br>
+### Option 2 - Clone the and symlink
 
 Clone the repository and symlink the script into a directory in your `PATH`
 (for example, `/usr/local/bin`):
@@ -77,7 +81,7 @@ mkdir -p ~/.local/bin
 ln -s ~/.t-mux-manager/t ~/.local/bin/t
 ```
 
-### Option 2 — Download the script directly
+### Option 3 — Download the script directly
 
 Download the latest version and place it in a directory that is in your `PATH`
 (for example, `~/.local/bin`):
