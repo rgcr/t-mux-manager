@@ -10,6 +10,8 @@ It can start sessions from simple `YAML` project files.
 
 And if you hate writing `YAML`, it can generate the file for you from an existing session.
 
+![tmux](https://github.com/user-attachments/assets/387ed811-1638-47cc-8a29-e3ff044f321d)
+
 
 ## Why?
 
