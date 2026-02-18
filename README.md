@@ -10,6 +10,8 @@ It can start sessions from simple `YAML` project files.
 
 And if you hate writing `YAML`, it can generate the file for you from an existing session.
 
+> Note: demo gif file was captured with `asciinema` so any visible render glitches were generated during the conversion process to `gif`
+
 ![tmux](https://github.com/user-attachments/assets/387ed811-1638-47cc-8a29-e3ff044f321d)
 
 
